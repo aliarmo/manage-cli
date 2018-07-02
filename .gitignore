@@ -1,0 +1,7 @@
+/node_modules
+/.vscode
+dev
+dist
+test
+tmp
+*.log

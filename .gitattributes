@@ -1,0 +1,6 @@
+*.vue text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.tpl text eol=lf
+

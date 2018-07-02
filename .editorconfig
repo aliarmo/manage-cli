@@ -1,0 +1,8 @@
+root = true
+
+end_of_line = lf
+
+[*.{js,css,vue,json,html}]
+charset = utf-8
+indent_style = space
+indent_size = 2
