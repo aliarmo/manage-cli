@@ -11,7 +11,8 @@
     5、其他
 	
 # 运行demo，查看效果
-* demo介绍
+* demo介绍   
+
   demo的搭建用到了大部分通用的东西，比如权限控制，有些用户就不能做删除操作，甚至不能访问某个URL，一共4个页面
   ```
     --index.html，首页，配置有权限
@@ -19,8 +20,7 @@
     --tab2.html，tab2页面，配置无权限
     --login.html，login页面，没有鉴权
   ```
-  可以在views/fetchers/permission里面改返回的权限数据来控制权限
-  下面我们先跑起来
+  可以在views/fetchers/permission里面改返回的权限数据来控制权限，下面我们先跑起来
 * 安装依赖
 ```
   npm i
@@ -41,12 +41,14 @@
 * 组件获取数据后渲染到指定视图
 
 # 文件结构
-* c/comps
+* c/comps   
+
   公共基本基本组件，任何地方都可引入，引入方式
 ```
 import BaseInput from 'comps/base-input'
 ```
-* c/directives
+* c/directives   
+
   自定义全局指令
 ```
   v-permission 权限判断指令，app.vue中有具体用法
@@ -54,9 +56,11 @@ import BaseInput from 'comps/base-input'
   v-spa        布局切换指令，app.vue中有具体用法
 
 ```
-* c/models
+* c/models   
+
   公共接口，任何地方都可调用，调用方式和公共组件一致
-* c/modules
+* c/modules    
+
   js功能模块，下面介绍几个主要功能模块
 ```
     api-------------------对获取数据的封装，采用fetch，而不是传统的XmlHttpRequest
@@ -79,13 +83,13 @@ import BaseInput from 'comps/base-input'
 * 文件结构更多介绍请看文章（http://km.oa.com/articles/show/366841）
 
 # 开发流程
-* 0、引入样式文件    
+* 0、引入样式文件         
 
 	   如有需要，请在views/index.html中引入自己的业务样式文件
-* 1、权限接口替换     
+* 1、权限接口替换        
 
      将views/fetchers/permission里面的假权限数据换成自己的权限接口，接口返回的数据结构最好与fakeData一致。
-* 2、views/App.vue   
+* 2、views/App.vue     
 
 	  （1）调整成适合自己的页面布局。  
 
@@ -104,7 +108,8 @@ import BaseInput from 'comps/base-input'
 
   至此，开发流程已经完成，后续如还需进行业务开发，重复3-6步骤即可，基础框架走通   
 
-  PS：
+  PS：    
+  
 	（1）当需要某个功能的时候，多看看modules下面有没有提供
 	（2）图片上传模块在使用时注意换成自己的上传后台服务
 
