@@ -3,13 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./webpack.base')
 const port = process.env.PORT || 8999
 
+var genHtml=require('./generate-html')
+
+config.module.loaders.push({
+  test: /\.js$/,
+  loader: 'babel-loader?cacheDirectory=true!area-loader?ENV=dev',
+  exclude: [/node_modules/]
+})
+
+config.plugins=config.plugins.concat(genHtml('production'))
+
 config.plugins.push(
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('development')
-  }),
-  new HtmlWebpackPlugin({
-    template:"./views/index.html",
-    ENV:'development'
   }),
   new webpack.NamedModulesPlugin(),
   new webpack.HotModuleReplacementPlugin(),

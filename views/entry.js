@@ -1,5 +1,7 @@
 import 'babel-polyfill'
 
+import 'modules/env'
+
 import Vuex from 'vuex'
 /**
  *全局注册常用组件

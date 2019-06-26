@@ -28,12 +28,7 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loaders: ['vue-loader']
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader?cacheDirectory=true',
-        exclude: [/node_modules/]
+        loaders: ['vue-loader','scope-loader']
       }
     ]
   },
